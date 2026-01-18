@@ -223,6 +223,154 @@ const FRAGRANCE_PERSONAS = {
     }
 };
 
+// 9大香型画像（由第2-25题统计得到）
+const SCENT_PROFILES = {
+    citrus: {
+        emoji: '🍋',
+        name: '柑橘调',
+        vibe: '明亮清爽',
+        notes: {
+            top: '佛手柑、葡萄柚',
+            middle: '橙花、生姜',
+            base: '雪松、白麝香'
+        },
+        recommendations: [
+            { name: '祖玛珑 青柠罗勒与柑橘', price: '约￥500' },
+            { name: '欧珑 无极乌龙', price: '约￥900' },
+            { name: '爱马仕 橘绿之泉', price: '约￥800' }
+        ],
+        tips: ['适合早晨与通勤，提神不压迫', '夏天可多喷一点，越热越好闻', '想更耐闻：叠加少许木质或麝香']
+    },
+    floral: {
+        emoji: '🌸',
+        name: '花香调',
+        vibe: '温柔浪漫',
+        notes: {
+            top: '小苍兰、梨',
+            middle: '玫瑰、茉莉',
+            base: '麝香、琥珀'
+        },
+        recommendations: [
+            { name: '祖玛珑 英国梨与小苍兰', price: '约￥500' },
+            { name: '迪奥 真我', price: '约￥800' },
+            { name: '香奈儿 邂逅柔情', price: '约￥1200' }
+        ],
+        tips: ['约会/聚会很加分，亲和力拉满', '天气转凉可选更浓郁的版本更显质感', '不想太甜：用白麝香或绿叶调压一压']
+    },
+    woody: {
+        emoji: '🌲',
+        name: '木质调',
+        vibe: '沉稳高级',
+        notes: {
+            top: '丝柏、干草',
+            middle: '雪松、檀木',
+            base: '琥珀木、皮革'
+        },
+        recommendations: [
+            { name: '蒂普提克 檀道', price: '约￥800' },
+            { name: 'Le Labo 檀香33', price: '约￥2000' },
+            { name: 'Byredo 超级雪松', price: '约￥1200' }
+        ],
+        tips: ['秋冬/夜晚更出彩，气质会被放大', '喷在衣领/发梢更温柔、更持久', '想更清爽：用柑橘前调做开场']
+    },
+    fresh: {
+        emoji: '🫧',
+        name: '清新干净调',
+        vibe: '清透克制',
+        notes: {
+            top: '醛香、柠檬马鞭草',
+            middle: '棉花香、鸢尾根',
+            base: '白麝香、淡木香'
+        },
+        recommendations: [
+            { name: 'CK one', price: '约￥300' },
+            { name: 'Maison Margiela 慵懒周末', price: '约￥700' },
+            { name: '祖玛珑 鼠尾草与海盐', price: '约￥500' }
+        ],
+        tips: ['办公室/近距离友好，存在感刚刚好', '少量多次比一次喷很多更高级', '搭配无香身体乳，干净感会更稳']
+    },
+    spicy: {
+        emoji: '🌶️',
+        name: '辛香调',
+        vibe: '张力十足',
+        notes: {
+            top: '粉红胡椒、柑橘皮',
+            middle: '肉桂、生姜',
+            base: '琥珀、香草'
+        },
+        recommendations: [
+            { name: '爱马仕 大地', price: '约￥800' },
+            { name: '汤姆福特 烟草香草', price: '约￥2500' },
+            { name: '娇兰 帝王之水', price: '约￥600' }
+        ],
+        tips: ['更适合点喷：耳后/手腕/锁骨', '晚宴或重要场合更显气场', '怕太冲：先主香薄喷，再用副香柔化']
+    },
+    green: {
+        emoji: '🌿',
+        name: '绿叶调',
+        vibe: '清醒治愈',
+        notes: {
+            top: '绿叶、薄荷',
+            middle: '无花果叶、绿茶',
+            base: '苔藓、雪松'
+        },
+        recommendations: [
+            { name: '爱马仕 尼罗河花园', price: '约￥800' },
+            { name: '蒂普提克 无花果', price: '约￥800' },
+            { name: '伊丽莎白雅顿 绿茶', price: '约￥200' }
+        ],
+        tips: ['适合需要专注与清醒的日子', '雨天/阴天喷会格外舒服', '想更温柔：叠加少许花香更有层次']
+    },
+    oriental: {
+        emoji: '🌙',
+        name: '东方调',
+        vibe: '神秘浓郁',
+        notes: {
+            top: '藏红花、熏香',
+            middle: '玫瑰、广藿香',
+            base: '安息香、龙涎香'
+        },
+        recommendations: [
+            { name: '汤姆福特 黑兰花', price: '约￥1800' },
+            { name: 'YSL 黑鸦片', price: '约￥800' },
+            { name: '蒂普提克 感官之水', price: '约￥800' }
+        ],
+        tips: ['冷天和夜晚更迷人，越晚越好闻', '尽量避开闷热天气与密闭空间', '想更轻盈：叠加柑橘或清新麝香']
+    },
+    gourmand: {
+        emoji: '🍮',
+        name: '美食调',
+        vibe: '甜暖治愈',
+        notes: {
+            top: '焦糖、梨',
+            middle: '香草、奶油',
+            base: '零陵香豆、檀香'
+        },
+        recommendations: [
+            { name: '兰蔻 美丽人生', price: '约￥900' },
+            { name: 'Maison Margiela 咖啡休息站', price: '约￥700' },
+            { name: '娇兰 小黑裙', price: '约￥700' }
+        ],
+        tips: ['秋冬最适配，像把自己裹进柔软毛衣里', '气温越高越要少喷，留一点“若有若无”', '想更有质感：叠加木质后调会更耐闻']
+    },
+    aquatic: {
+        emoji: '🌊',
+        name: '海洋水生调',
+        vibe: '自由轻盈',
+        notes: {
+            top: '海风、柠檬',
+            middle: '水生花、海盐',
+            base: '麝香、漂流木'
+        },
+        recommendations: [
+            { name: '三宅一生 一生之水', price: '约￥700' },
+            { name: '祖玛珑 鼠尾草与海盐', price: '约￥500' },
+            { name: '宝格丽 碧蓝', price: '约￥600' }
+        ],
+        tips: ['夏天/运动后喷很解暑，干净不闷', '水生调易散：随身带分装更方便补喷', '想更温柔：叠加白麝香或轻花香']
+    }
+};
+
 // 疗愈香气建议
 const HEALING_NOTES = {
     energizing: {
@@ -251,6 +399,71 @@ const HEALING_NOTES = {
     }
 };
 
+function getScentProfile(scentKey, fallbackKey = 'floral') {
+    if (typeof scentKey === 'string' && SCENT_PROFILES[scentKey]) return SCENT_PROFILES[scentKey];
+    if (SCENT_PROFILES[fallbackKey]) return SCENT_PROFILES[fallbackKey];
+    return SCENT_PROFILES.floral;
+}
+
+function splitNotes(noteText) {
+    return String(noteText || '')
+        .split(/[、,]/)
+        .map(text => text.trim())
+        .filter(Boolean);
+}
+
+function mergeNotes(primaryText, secondaryText, maxItems = 4) {
+    const merged = [];
+    for (const item of [...splitNotes(primaryText), ...splitNotes(secondaryText)]) {
+        if (merged.includes(item)) continue;
+        merged.push(item);
+        if (merged.length >= maxItems) break;
+    }
+    return merged.join('、');
+}
+
+function buildScentBlend(primaryProfile, secondaryProfile) {
+    const isSame = primaryProfile === secondaryProfile;
+    const top = primaryProfile.notes?.top || '';
+    const middle = isSame
+        ? (primaryProfile.notes?.middle || '')
+        : mergeNotes(primaryProfile.notes?.middle, secondaryProfile.notes?.middle);
+    const base = isSame ? (primaryProfile.notes?.base || '') : (secondaryProfile.notes?.base || '');
+
+    const description = isSame
+        ? `你的选择高度集中在「${primaryProfile.name}」：整体更偏${primaryProfile.vibe}。`
+        : `你的香气更偏「${primaryProfile.name}」的${primaryProfile.vibe}，尾韵会被「${secondaryProfile.name}」的${secondaryProfile.vibe}轻轻托住。`;
+
+    return { top, middle, base, description };
+}
+
+function buildRecommendations(primaryProfile, secondaryProfile) {
+    const isSame = primaryProfile === secondaryProfile;
+    const primary = Array.isArray(primaryProfile.recommendations) ? primaryProfile.recommendations : [];
+    const secondary = Array.isArray(secondaryProfile.recommendations) ? secondaryProfile.recommendations : [];
+
+    if (isSame) return primary.slice(0, 3);
+
+    return [
+        ...primary.slice(0, 2).map(rec => ({ ...rec, name: `【主香】${rec.name}` })),
+        ...secondary.slice(0, 1).map(rec => ({ ...rec, name: `【副香】${rec.name}` }))
+    ];
+}
+
+function buildTips(primaryProfile, secondaryProfile) {
+    const tips = [];
+    const primaryTips = Array.isArray(primaryProfile.tips) ? primaryProfile.tips : [];
+    const secondaryTips = Array.isArray(secondaryProfile.tips) ? secondaryProfile.tips : [];
+
+    for (const tip of [...primaryTips, ...secondaryTips]) {
+        if (!tip || tips.includes(tip)) continue;
+        tips.push(tip);
+        if (tips.length >= 3) break;
+    }
+
+    return tips;
+}
+
 // 页面初始化
 document.addEventListener('DOMContentLoaded', function () {
     // 获取测试结果
@@ -277,37 +490,47 @@ function renderResult(result) {
     const resultCard = document.getElementById('resultCard');
 
     // 获取香气人格数据
-    const persona = FRAGRANCE_PERSONAS[result.zodiac];
+    const persona = FRAGRANCE_PERSONAS[result.zodiac] || FRAGRANCE_PERSONAS.aries;
+    const primaryProfile = getScentProfile(result.primaryScent, 'floral');
+    const secondaryProfile = getScentProfile(result.secondaryScent, 'woody');
+    const scentBlend = buildScentBlend(primaryProfile, secondaryProfile);
+    const recommendations = buildRecommendations(primaryProfile, secondaryProfile);
+    const tips = buildTips(primaryProfile, secondaryProfile);
     const healing = HEALING_NOTES[result.healingNeed] || HEALING_NOTES.enhancing;
+    const zodiacSubtitle = String(persona.subtitle || '').split('×')[0]?.trim() || '';
+    const subtitle = `${zodiacSubtitle} × 主香：${primaryProfile.emoji} ${primaryProfile.name}｜副香：${secondaryProfile.emoji} ${secondaryProfile.name}`;
 
     // 渲染结果卡片
     resultCard.innerHTML = `
-        <div class="result-header">
-            <span class="zodiac-icon">${persona.icon}</span>
-            <h1 class="result-title">${persona.name}</h1>
-            <p class="result-subtitle">${persona.subtitle}</p>
-        </div>
-        
-        <p class="result-description">${persona.description}</p>
-        
-        <!-- 香调盘 -->
-        <div class="fragrance-section">
-            <h3 class="section-title">🌸 你的命定香调盘</h3>
-            <div class="notes-grid">
-                <div class="note-item">
-                    <p class="note-label">前调</p>
-                    <p class="note-name">${persona.notes.top}</p>
-                </div>
-                <div class="note-item">
-                    <p class="note-label">中调</p>
-                    <p class="note-name">${persona.notes.middle}</p>
-                </div>
-                <div class="note-item">
-                    <p class="note-label">后调</p>
-                    <p class="note-name">${persona.notes.base}</p>
-                </div>
-            </div>
-        </div>
+	        <div class="result-header">
+	            <span class="zodiac-icon">${persona.icon}</span>
+	            <h1 class="result-title">${persona.name}</h1>
+	            <p class="result-subtitle">${subtitle}</p>
+	        </div>
+	        
+	        <p class="result-description">${persona.description}</p>
+	        
+	        <!-- 香调盘 -->
+	        <div class="fragrance-section">
+	            <h3 class="section-title">🌸 你的命定香调盘</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6; margin-bottom: 18px;">
+                    ${scentBlend.description}
+                </p>
+	            <div class="notes-grid">
+	                <div class="note-item">
+	                    <p class="note-label">前调</p>
+	                    <p class="note-name">${scentBlend.top}</p>
+	                </div>
+	                <div class="note-item">
+	                    <p class="note-label">中调</p>
+	                    <p class="note-name">${scentBlend.middle}</p>
+	                </div>
+	                <div class="note-item">
+	                    <p class="note-label">后调</p>
+	                    <p class="note-name">${scentBlend.base}</p>
+	                </div>
+	            </div>
+	        </div>
         
         <!-- 情绪疗愈 -->
         <div class="healing-section">
@@ -316,25 +539,25 @@ function renderResult(result) {
         </div>
         
         <!-- 香水推荐 -->
-        <div class="recommend-section">
-            <h3 class="section-title">💝 为你推荐</h3>
-            <div class="recommend-list">
-                ${persona.recommendations.map(rec => `
-                    <div class="recommend-item">
-                        <span class="recommend-name">${rec.name}</span>
-                        <span class="recommend-price">${rec.price}</span>
-                    </div>
-                `).join('')}
+	        <div class="recommend-section">
+	            <h3 class="section-title">💝 为你推荐</h3>
+	            <div class="recommend-list">
+	                ${recommendations.map(rec => `
+	                    <div class="recommend-item">
+	                        <span class="recommend-name">${rec.name}</span>
+	                        <span class="recommend-price">${rec.price}</span>
+	                    </div>
+	                `).join('')}
             </div>
         </div>
         
         <!-- 选香小贴士 -->
-        <div class="tips-section">
-            <h3 class="section-title">✧ 选香小贴士</h3>
-            <ul class="tips-list">
-                ${persona.tips.map(tip => `<li>${tip}</li>`).join('')}
-            </ul>
-        </div>
+	        <div class="tips-section">
+	            <h3 class="section-title">✧ 选香小贴士</h3>
+	            <ul class="tips-list">
+	                ${tips.map(tip => `<li>${tip}</li>`).join('')}
+	            </ul>
+	        </div>
         
         <!-- 疗愈语录 -->
         <div class="healing-section" style="margin-top: 25px;">

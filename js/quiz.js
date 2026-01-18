@@ -461,8 +461,8 @@ function calculateResult() {
     const primaryScent = sortedScents[0] ? sortedScents[0][0] : 'floral';
     const secondaryScent = sortedScents[1] ? sortedScents[1][0] : 'woody';
 
-    // 主要疗愈需求
-    const healingNeed = healingNeeds[0] || 'enhancing';
+    // 主要疗愈需求（第22题「希望香水带来的感受」优先）
+    const healingNeed = (answers['22'] && answers['22'].healing) || healingNeeds[0] || 'enhancing';
 
     return {
         zodiac: selectedZodiac,
