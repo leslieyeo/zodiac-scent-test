@@ -1,0 +1,651 @@
+/* ============================================
+   十二星座 × 灵魂香气测试 - 主样式表
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    --primary-color: #d4a5a5;
+    --primary-dark: #c48b8b;
+    --secondary-color: #f5e6e0;
+    --accent-color: #9b7e6a;
+    --text-color: #5a4a42;
+    --text-light: #8a7a72;
+    --bg-gradient: linear-gradient(135deg, #fdf6f0 0%, #f5e6e0 50%, #ede4df 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --shadow-soft: 0 8px 32px rgba(180, 150, 140, 0.15);
+    --shadow-hover: 0 12px 40px rgba(180, 150, 140, 0.25);
+    --border-radius: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Auth Card */
+.auth-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    padding: 50px 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Logo Section */
+.logo-section {
+    margin-bottom: 40px;
+}
+
+.star-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.title {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    letter-spacing: 0.15em;
+}
+
+.subtitle {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Auth Section */
+.auth-section {
+    margin-bottom: 35px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid #e8ddd8;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
+    text-align: center;
+    letter-spacing: 0.15em;
+    transition: var(--transition);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(212, 165, 165, 0.15);
+}
+
+.start-btn {
+    width: 100%;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(212, 165, 165, 0.4);
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 165, 0.5);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.start-btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.error-msg {
+    color: #e57373;
+    font-size: 0.85rem;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.info-icon {
+    font-size: 1rem;
+}
+
+/* Floating Decorations */
+.decoration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.float-element {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.15;
+    color: var(--primary-color);
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.float-2 { top: 20%; right: 15%; animation-delay: 1.5s; }
+.float-3 { bottom: 30%; left: 8%; animation-delay: 3s; }
+.float-4 { bottom: 15%; right: 10%; animation-delay: 4.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* ============================================
+   测试页面样式
+   ============================================ */
+
+/* Quiz Container */
+.quiz-container {
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Progress Bar */
+.progress-section {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(212, 165, 165, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Question Card */
+.question-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    padding: 40px 35px;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-number {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    letter-spacing: 0.1em;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* Options */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    text-align: left;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #e8ddd8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1.5;
+}
+
+.option-btn:hover {
+    border-color: var(--primary-color);
+    background: rgba(212, 165, 165, 0.1);
+    transform: translateX(5px);
+}
+
+.option-btn.selected {
+    border-color: var(--primary-color);
+    background: rgba(212, 165, 165, 0.2);
+}
+
+/* ============================================
+   结果页面样式
+   ============================================ */
+
+.result-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    padding: 50px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    animation: fadeIn 0.8s ease;
+}
+
+.result-header {
+    margin-bottom: 35px;
+}
+
+.zodiac-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.result-title {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.result-subtitle {
+    font-size: 1rem;
+    color: var(--primary-dark);
+}
+
+.result-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 35px;
+    padding: 0 10px;
+}
+
+/* Fragrance Notes */
+.fragrance-section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.note-item {
+    background: rgba(212, 165, 165, 0.1);
+    border-radius: 12px;
+    padding: 15px 10px;
+}
+
+.note-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.note-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Recommendations */
+.recommend-section {
+    margin-bottom: 35px;
+}
+
+.recommend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recommend-item {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommend-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.recommend-price {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Share Button */
+.share-section {
+    margin-top: 20px;
+}
+
+.share-btn {
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(212, 165, 165, 0.4);
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 165, 0.5);
+}
+
+/* Healing Section */
+.healing-section {
+    background: linear-gradient(135deg, rgba(212, 165, 165, 0.1) 0%, rgba(155, 126, 106, 0.1) 100%);
+    border-radius: 15px;
+    padding: 25px 20px;
+    margin-bottom: 35px;
+}
+
+.healing-title {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.healing-text {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Tips Section */
+.tips-section {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tips-list li::before {
+    content: '✧';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* ============================================
+   响应式设计
+   ============================================ */
+
+@media (max-width: 480px) {
+    .auth-card,
+    .question-card,
+    .result-card {
+        padding: 35px 25px;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .question-text {
+        font-size: 1.1rem;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* ============================================
+   星座选择页面
+   ============================================ */
+
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.zodiac-btn {
+    padding: 18px 10px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #e8ddd8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.zodiac-btn:hover {
+    border-color: var(--primary-color);
+    background: rgba(212, 165, 165, 0.1);
+    transform: translateY(-3px);
+}
+
+.zodiac-btn.selected {
+    border-color: var(--primary-color);
+    background: rgba(212, 165, 165, 0.2);
+}
+
+.zodiac-symbol {
+    font-size: 1.5rem;
+}
+
+.zodiac-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Loading Animation */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(253, 246, 240, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.loading-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 20px;
+    letter-spacing: 0.1em;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(212, 165, 165, 0.3);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
