@@ -545,7 +545,6 @@ function renderResult(result) {
 	                ${recommendations.map(rec => `
 	                    <div class="recommend-item">
 	                        <span class="recommend-name">${rec.name}</span>
-	                        <span class="recommend-price">${rec.price}</span>
 	                    </div>
 	                `).join('')}
             </div>
